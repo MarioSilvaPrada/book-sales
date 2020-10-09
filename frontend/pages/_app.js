@@ -18,7 +18,7 @@ class MyApp extends App {
             crossOrigin='anonymous'
           />
         </Head>
-        <div style={{ background: 'red' }}>
+        <div>
           <Component {...pageProps} />
         </div>
       </>
