@@ -1,12 +1,9 @@
 const theme = {
-  dark: {
-    background: 'rgb(11,14,19)',
-    heading: '#fddb3a',
+  color: {
+    background: '#E8DDD1',
+    heading: '#15B1AC',
     error: '#ff0340',
-  },
-  light: {
-    color: '#222831',
-    background: 'white',
+    grey: 'rgb(243, 243, 244)',
   },
   fontSize: {
     small: '9px',

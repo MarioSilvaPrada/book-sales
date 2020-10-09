@@ -7,9 +7,20 @@ import withData from '../lib/apollo';
 import { ThemeProvider } from 'styled-components';
 import theme from '../utils/theme';
 
+import AppContext from '../context/AppContext';
+
 class MyApp extends App {
+  state = {
+    searchInput: '',
+  };
+
+  setSearch = (searchInput) => {
+    this.setState({ searchInput });
+  };
+
   render() {
     const { Component, pageProps } = this.props;
+
     return (
       <>
         <Head>
@@ -20,11 +31,15 @@ class MyApp extends App {
             crossOrigin='anonymous'
           />
         </Head>
-        <ThemeProvider theme={theme}>
-          <Layout>
-            <Component {...pageProps} />
-          </Layout>
-        </ThemeProvider>
+        <AppContext.Provider
+          value={{ ...this.state, setSearch: this.setSearch }}
+        >
+          <ThemeProvider theme={theme}>
+            <Layout>
+              <Component {...pageProps} />
+            </Layout>
+          </ThemeProvider>
+        </AppContext.Provider>
       </>
     );
   }
