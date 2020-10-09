@@ -33,6 +33,9 @@
     },
     "language": {
       "type": "string"
+    },
+    "author": {
+      "type": "string"
     }
   }
 }

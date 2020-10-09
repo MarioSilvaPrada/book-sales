@@ -2,8 +2,10 @@
 import React from 'react';
 import App from 'next/app';
 import Head from 'next/head';
-// import Layout from '../components/Layout';
+import Layout from '../components/Layout';
 import withData from '../lib/apollo';
+import { ThemeProvider } from 'styled-components';
+import theme from '../utils/theme';
 
 class MyApp extends App {
   render() {
@@ -18,9 +20,11 @@ class MyApp extends App {
             crossOrigin='anonymous'
           />
         </Head>
-        <div>
-          <Component {...pageProps} />
-        </div>
+        <ThemeProvider theme={theme}>
+          <Layout>
+            <Component {...pageProps} />
+          </Layout>
+        </ThemeProvider>
       </>
     );
   }
