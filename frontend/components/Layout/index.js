@@ -15,7 +15,7 @@ const Layout = (props) => {
   const { searchInput, setSearch } = appContext;
 
   return (
-    <div>
+    <S.Body>
       <Head>
         <title>{title}</title>
         <meta charSet='utf-8' />
@@ -24,26 +24,29 @@ const Layout = (props) => {
       </Head>
       <header>
         <S.Nav>
-          <Logo color={theme.color.heading} />
-          <S.InputWrapper>
-            <ImSearch
-              style={{
-                position: 'absolute',
-                top: '30%',
-                left: '.5rem',
-                color: 'rgb(158, 158, 167)',
-              }}
-            />
-            <S.SearchBar
-              value={searchInput}
-              onChange={(e) => setSearch(e.target.value)}
-              placeholder='Search'
-            />
-          </S.InputWrapper>
+          <S.NavWrapper>
+            <Logo color={theme.color.heading()} />
+            <S.MainTitle>My Bookshelf</S.MainTitle>
+            <S.InputWrapper>
+              <ImSearch
+                style={{
+                  position: 'absolute',
+                  top: '30%',
+                  left: '.5rem',
+                  color: 'rgb(158, 158, 167)',
+                }}
+              />
+              <S.SearchBar
+                value={searchInput}
+                onChange={(e) => setSearch(e.target.value)}
+                placeholder='Search'
+              />
+            </S.InputWrapper>
+          </S.NavWrapper>
         </S.Nav>
       </header>
       <S.Container>{props.children}</S.Container>
-    </div>
+    </S.Body>
   );
 };
 

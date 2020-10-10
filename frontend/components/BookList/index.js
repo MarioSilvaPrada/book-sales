@@ -39,13 +39,14 @@ const BookList = () => {
               return (
                 <S.Wrapper>
                   <S.Cover src={url} />
-                  <p>{name}</p>
-                  <p>{author}</p>
-                  <p>{formatPrice}</p>
-                  <p>{searchInput}</p>
+                  <S.Title>{name}</S.Title>
+                  <S.Author>{author}</S.Author>
+                  <S.Price>{formatPrice}</S.Price>
                 </S.Wrapper>
               );
             });
+          } else {
+            return <h1>We don't have books with that name</h1>;
           }
         }}
       </AppContext.Consumer>

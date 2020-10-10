@@ -1,14 +1,31 @@
 import styled from 'styled-components';
 
+export const Body = styled.div`
+  font-family: 'Roboto', sans-serif;
+`;
+
 export const Nav = styled.div`
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
+  background: ${({ theme }) => theme.color.background};
   padding: 0 2rem;
 `;
 
+export const NavWrapper = styled.div`
+  max-width: ${({ theme }) => theme.maxWidth};
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+`;
+
+export const MainTitle = styled.h1`
+  font-family: 'Pacifico', cursive;
+  color: ${({ theme }) => theme.color.heading()};
+`;
+
 export const Container = styled.div`
-  background: ${({ theme }) => theme.color.heading};
+  background: ${({ theme }) => theme.color.background};
+  min-height: 90vh;
+  padding: 0 2rem;
 `;
 
 export const SearchBar = styled.input`
@@ -21,7 +38,7 @@ export const SearchBar = styled.input`
 
   &:focus {
     outline: none !important;
-    border: 1px solid ${({ theme }) => theme.color.heading};
+    border: 1px solid ${({ theme }) => theme.color.heading()};
     box-shadow: 0 0 10px #719ece;
   }
 `;
